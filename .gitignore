@@ -1,0 +1,12 @@
+.env
+venv/
+.venv/
+
+__pycache__
+pycache/
+uploads/
+generated/
+masks/
+Debugs/
+
+flask.log

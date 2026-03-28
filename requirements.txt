@@ -1,0 +1,12 @@
+Flask
+flask_cors
+python-dotenv
+requests
+numpy
+opencv-python-headless
+scipy
+APScheduler
+gunicorn
+supabase
+fpdf
+qrcode
