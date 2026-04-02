@@ -61,7 +61,8 @@ def apply_pattern(room_img, curtain_tex, mask_img, repeat=12, shading_strength=0
         fold_strength = 15 * (2.0 / 1.5) 
         
         gray = cv2.cvtColor(room_img, cv2.COLOR_BGR2GRAY)
-        gray_blur = cv2.GaussianBlur(gray, (21, 21), 0)
+        gray_masked = cv2.bitwise_and(gray, gray, mask=mask_gray) # Mask out everything except the curtain before blurring
+        gray_blur = cv2.GaussianBlur(gray_masked, (31, 101), 0)
         
         disp_map = (gray_blur.astype(np.float32) - 127.5) / 127.5 
         
